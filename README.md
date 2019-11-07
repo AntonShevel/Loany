@@ -9,7 +9,25 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+To start server within Docker container:
+
+```bash
+docker-compose up
+```
+
+Run migrations:
+```bash
+docker-compose run --rm loany_app mix ecto.create
+docker-compose run --rm loany_app mix ecto.migrate
+```
+
+Run bash within container:
+```bash
+docker exec -it loany_app /bin/bash
+docker attach loany_app # allows console input
+```
+
+
 
 ## Learn more
 
@@ -18,13 +36,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
-
-docker-compose run --rm loany_app mix ecto.create
-docker-compose run --rm loany_app mix ecto.migrate
-docker exec -it loany_app /bin/bash
-docker attach loany_app
-
-
-TODO
-docker-compose override
 
