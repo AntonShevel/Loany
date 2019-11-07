@@ -1,38 +1,53 @@
 <section class="row">
   <div class="col-sm-7">
     <h2>Loan application</h2>
-    <form>
+    <%= form_for @changeset, Routes.page_path(@conn, :index), fn f -> %>
       <div class="form-group row">
-        <label for="amount" class="col-sm-3 col-form-label">Requested loan amount (in SEK)</label>
+        <%= label f, :amount, class: "col-sm-3 col-form-label" do %>
+          Requested loan amount (in SEK)
+        <% end %>
         <div class="col-sm-6">
-          <input type="text" class="form-control-plaintext" id="amount" name="amount" required>
+          <%= text_input f, :amount, class: "form-control" <> error_class(f, :amount), required: true%>
+          <%= error_tag f, :amount %>
         </div>
       </div>
       <div class="form-group row">
-        <label for="firstName" class="col-sm-3 col-form-label">First name</label>
+        <%= label f, :first_name, class: "col-sm-3 col-form-label" do %>
+          First name
+        <% end %>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="firstName" name="first_name" required>
+          <%= text_input f, :first_name, class: "form-control" <> error_class(f, :first_name), required: true%>
+          <%= error_tag f, :first_name %>
         </div>
       </div>
       <div class="form-group row">
-        <label for="lastName" class="col-sm-3 col-form-label">Last name</label>
+        <%= label f, :last_name, class: "col-sm-3 col-form-label" do %>
+          Last name
+        <% end %>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="lastName" name="last_name" required>
+          <%= text_input f, :last_name, class: "form-control" <> error_class(f, :last_name), required: true %>
+          <%= error_tag f, :last_name %>
         </div>
       </div>
       <div class="form-group row">
-        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+        <%= label f, :phone, class: "col-sm-3 col-form-label" do %>
+          Phone
+        <% end %>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="phone" name="phone" required>
+          <%= text_input f, :phone, class: "form-control" <> error_class(f, :phone), required: true %>
+          <%= error_tag f, :phone %>
         </div>
       </div>
       <div class="form-group row">
-        <label for="email" class="col-sm-3 col-form-label">Email</label>
+        <%= label f, :email, class: "col-sm-3 col-form-label" do %>
+          Email
+        <% end %>
         <div class="col-sm-6">
-          <input type="email" class="form-control" id="email" name="email" required>
+          <%= text_input f, :email, class: "form-control" <> error_class(f, :email), required: true %>
+          <%= error_tag f, :email %>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+      <%= submit "Submit", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </section>

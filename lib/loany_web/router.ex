@@ -9,19 +9,9 @@ defmodule LoanyWeb.Router do
     plug :put_secure_browser_headers
   end
 
-#  pipeline :api do
-#    plug :accepts, ["json"]
-#  end
-
   scope "/", LoanyWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    post "/", PageController, :submit
+    resources "/", PageController, only: [:index, :create]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", LoanyWeb do
-  #   pipe_through :api
-  # end
 end

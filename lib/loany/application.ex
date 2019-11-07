@@ -11,9 +11,10 @@ defmodule Loany.Application do
       # Start the Ecto repository
       Loany.Repo,
       # Start the endpoint when the application starts
-      LoanyWeb.Endpoint
-      # Starts a worker by calling: Loany.Worker.start_link(arg)
-      # {Loany.Worker, arg},
+      LoanyWeb.Endpoint,
+      # Starts Loany GenServer
+      {Loany.MinLoanAmount, []}
+#      worker(Loany.MinLoanAmount, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

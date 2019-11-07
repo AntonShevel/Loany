@@ -11,7 +11,6 @@ RUN apk add --update nodejs npm bash inotify-tools
 
 # Intall phoenix
 ENV PHOENIX_VERSION=1.4.10
-#RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phx_new-${PHOENIX_VERSION}.ez
 RUN mix archive.install hex phx_new ${PHOENIX_VERSION} --force
 
 WORKDIR /app

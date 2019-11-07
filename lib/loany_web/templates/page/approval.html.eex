@@ -1,0 +1,21 @@
+<h2>Loan offer</h2>
+<hr>
+<dl>
+  <dd>First name</dd>
+    <dt><%= @application.first_name %></dt>
+
+  <dd>Last name</dd>
+    <dt><%= @application.last_name %></dt>
+
+  <dd>Phone</dd>
+    <dt><%= @application.phone %></dt>
+
+  <dd>Email</dd>
+    <dt><%= @application.email %></dt>
+
+  <dd>Amount</dd>
+    <dt><%= @application.amount %></dt>
+
+  <dd>Rate</dd>
+    <dt><%= @resolution.rate %></dt>
+</dl>

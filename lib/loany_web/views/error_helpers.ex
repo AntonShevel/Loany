@@ -10,8 +10,19 @@ defmodule LoanyWeb.ErrorHelpers do
   """
   def error_tag(form, field) do
     Enum.map(Keyword.get_values(form.errors, field), fn error ->
-      content_tag(:span, translate_error(error), class: "help-block")
-    end)
+      content_tag(:div, translate_error(error), class: "invalid-feedback")
+    end) |> IO.inspect
+  end
+
+  @doc """
+  Generate bootstrap-compatible error class for inputs
+  """
+  def error_class(form, field) do
+    IO.inspect form
+     case Keyword.fetch(form.errors, field) do
+       {:ok, _} -> " is-invalid"
+       _ -> ""
+     end
   end
 
   @doc """

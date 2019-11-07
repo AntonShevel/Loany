@@ -1,0 +1,7 @@
+<h2>Try again!</h2>
+<p>You will be redirected in 3 seconds...</p>
+<script>
+   setTimeout(function(){
+      window.location.href = '<%= Routes.page_path(@conn, :index) %>';
+   }, 3000);
+</script>
