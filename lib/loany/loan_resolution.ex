@@ -3,7 +3,7 @@ defmodule Loany.LoanResolution do
   import Ecto.Changeset
   import EctoEnum
 
-  defenum StatusEnum, approved: "approved", rejected: "rejected"
+  defenum(StatusEnum, approved: "approved", rejected: "rejected")
 
   schema "loan_resolutions" do
     field :rate, :decimal

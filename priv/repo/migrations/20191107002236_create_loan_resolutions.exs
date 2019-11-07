@@ -9,6 +9,5 @@ defmodule Loany.Repo.Migrations.CreateLoanResolutions do
 
       timestamps()
     end
-
   end
 end

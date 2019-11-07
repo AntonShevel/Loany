@@ -14,7 +14,7 @@ defmodule Loany.Application do
       LoanyWeb.Endpoint,
       # Starts Loany GenServer
       {Loany.MinLoanAmount, []}
-#      worker(Loany.MinLoanAmount, [])
+      #      worker(Loany.MinLoanAmount, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
